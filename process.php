@@ -1,7 +1,12 @@
 <?php
 header('Content-Type: application/json');
 session_start();
+include_once('ErrorLog.php');
 $config = include 'config.php';
+$logDir = __DIR__ . '/logs';
+
+$error= new ErrorLog();
+
 
 // ─────────────────────────────────────────────────────────
 // ✅ Validate Request Type
@@ -23,12 +28,13 @@ if (empty($_POST['user-message'])) {
 
 $userMessage = trim($_POST['user-message']);
 $maxLength = $config['chat_settings']['max_message_length'] ?? 2000;
+  $error->createErrorLog($userMessage);
+    if (strlen($userMessage) > $maxLength) {
 
-if (strlen($userMessage) > $maxLength) {
-    http_response_code(413);
-    echo json_encode(['error' => 'Message too long']);
-    exit;
-}
+        http_response_code(413);
+        echo json_encode(['error' => 'Message too long']);
+        exit;
+    }
 
 // ─────────────────────────────────────────────────────────
 // ✅ Rate Limiting (10 requests per minute)
@@ -77,6 +83,7 @@ $payload = [
         ['role' => 'user', 'content' => $userMessage]
     ]
 ];
+
 
 $options = [
     'http' => [
@@ -132,7 +139,7 @@ $reply = $data['choices'][0]['message'];
 // ─────────────────────────────────────────────────────────
 // ✅ Log to Daily Log File
 // ─────────────────────────────────────────────────────────
-$logDir = __DIR__ . '/logs';
+
 if (!is_dir($logDir)) {
     mkdir($logDir, 0777, true); // Create directory if missing
 }
@@ -152,3 +159,4 @@ echo json_encode([
     'role' => $reply['role'],
     'content' => $reply['content']
 ]);
+
