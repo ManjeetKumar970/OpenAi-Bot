@@ -1,2 +1,1 @@
-# OpenAi-Bot
-# OpenAi-Bot
+# OpenAI Bot

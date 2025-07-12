@@ -13,7 +13,6 @@ document.getElementById("chat-form").addEventListener("submit", async function (
 });
 
 async function sendToChatbot(message) {
-    console.log(message);
     try {
         const res = await fetch("process.php", {
             method: "POST",

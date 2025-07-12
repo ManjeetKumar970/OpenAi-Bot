@@ -1,0 +1,68 @@
+[2025-06-29 19:21:49] Hello
+
+[2025-06-29 19:21:49] dawda
+
+[2025-06-29 19:21:49] {
+    "model": "deepseek/deepseek-chat-v3-0324:free",
+    "messages": [
+        {
+            "role": "user",
+            "content": "dawda"
+        }
+    ]
+}
+
+[2025-06-29 19:22:16] daw
+
+[2025-06-29 19:22:16] daw
+
+[2025-06-29 19:22:16] {
+    "model": "deepseek/deepseek-chat-v3-0324:free",
+    "messages": [
+        {
+            "role": "user",
+            "content": "daw"
+        }
+    ]
+}
+
+[2025-06-29 19:23:11] test
+
+[2025-06-29 19:23:11] {
+    "model": "deepseek/deepseek-chat-v3-0324:free",
+    "messages": [
+        {
+            "role": "user",
+            "content": "test"
+        }
+    ]
+}
+
+[2025-06-29 19:23:45] dwadwawadaw
+
+[2025-06-29 19:24:19] dawdwadwad
+
+[2025-06-29 19:24:57] dwadwa
+
+[2025-06-29 19:26:53] dawdaw
+
+[2025-06-29 19:27:08] dawdaw
+
+[2025-06-29 19:28:04] dwadawdwa
+
+[2025-06-29 19:29:00] ad
+
+[2025-06-29 19:47:40] Hi how are you ?
+
+[2025-06-29 19:50:32] fesfesf
+
+[2025-06-29 19:51:08] fsfe
+
+[2025-06-29 19:53:34] 0897689098
+
+[2025-06-29 19:55:49] unset($output); exec("grep -E \"$key_regex\" /var/log/mail.log", $output);  if (!empty($output)) {     foreach ($output as $line) {         unset($matches);          if (preg_match('/: (\S+): sender non-delivery notification/', $line, $matches)) {             $messageid = $matches[1];             $errorcode = '555';             $mail_server = 'MS1';              // Insert using pg_query_params (safe and secure)             $insert_sql = "                 INSERT INTO \"MailsOUTsmtp_log\"                  (\"errorcode\", \"smtp_log\", \"messageKey\", \"mail_server\")                  VALUES ($1, $2, $3, $4)             ";              $result = pg_query_params($con, $insert_sql, [$errorcode, $line, $messageid, $mail_server]);              if (!$result) {                 echo "Insert failed for $messageid: " . pg_last_error($con) . "\n";             }         }     } }
+
+[2025-06-29 20:11:51] Hi how are you ?
+
+[2025-06-29 20:12:50] Hi how are you ?
+
